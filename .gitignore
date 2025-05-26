@@ -1,7 +1,14 @@
 # Compiled class file
 *.class
 
-# Log file
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+*/.gradle
+/db
+#Log file
 *.log
 
 # BlueJ files
