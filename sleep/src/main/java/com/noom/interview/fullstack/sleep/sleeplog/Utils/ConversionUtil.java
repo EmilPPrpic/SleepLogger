@@ -17,6 +17,7 @@ public class ConversionUtil {
         sleepLogDTO.setTimeInBedInterval(convertToTimeInBedIntervalDTO(sleepLog.getTimeInBedInterval()));
         sleepLogDTO.setTotalTimeInBedSeconds(sleepLog.getTotalTimeInBedSeconds());
         sleepLogDTO.setMorningFeeling(sleepLog.getMorningFeeling());
+        sleepLogDTO.setUserId(sleepLog.getUser().getId());
         return sleepLogDTO;
     }
 

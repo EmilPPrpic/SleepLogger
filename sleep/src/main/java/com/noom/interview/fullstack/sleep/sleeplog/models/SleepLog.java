@@ -1,5 +1,6 @@
 package com.noom.interview.fullstack.sleep.sleeplog.models;
 
+import com.noom.interview.fullstack.sleep.user.models.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -29,4 +30,8 @@ public class SleepLog {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private MorningFeeling morningFeeling;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 }

@@ -16,4 +16,5 @@ public class SleepLogDTO {
     private TimeInBedIntervalDTO timeInBedInterval;
     private long totalTimeInBedSeconds;
     private MorningFeeling morningFeeling;
+    private Long userId;
 }

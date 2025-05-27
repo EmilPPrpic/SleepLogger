@@ -7,6 +7,7 @@ CREATE TABLE sleep_log
     time_in_bed_id            BIGINT,
     total_time_in_bed_seconds BIGINT                      NOT NULL,
     morning_feeling           VARCHAR(255)                NOT NULL,
+    user_id                   BIGINT                      NOT NULL,
     CONSTRAINT pk_sleeplog PRIMARY KEY (id)
 );
 
@@ -18,8 +19,25 @@ CREATE TABLE time_in_bed_interval
     CONSTRAINT pk_timeinbedinterval PRIMARY KEY (id)
 );
 
+CREATE TABLE users
+(
+    id       BIGINT       NOT NULL,
+    username VARCHAR(255) NOT NULL,
+    CONSTRAINT pk_users PRIMARY KEY (id)
+);
+
 ALTER TABLE sleep_log
     ADD CONSTRAINT uc_sleeplog_time_in_bed UNIQUE (time_in_bed_id);
 
+ALTER TABLE users
+    ADD CONSTRAINT uc_users_username UNIQUE (username);
+
 ALTER TABLE sleep_log
     ADD CONSTRAINT FK_SLEEPLOG_ON_TIME_IN_BED FOREIGN KEY (time_in_bed_id) REFERENCES time_in_bed_interval (id);
+
+ALTER TABLE sleep_log
+    ADD CONSTRAINT FK_SLEEPLOG_ON_USER FOREIGN KEY (user_id) REFERENCES users (id);
+
+INSERT INTO users (id, username)
+VALUES (1, 'User1')
+ON CONFLICT (id) DO NOTHING;
