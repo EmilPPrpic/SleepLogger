@@ -1,0 +1,160 @@
+{
+  "info": {
+    "name": "SleepLog API (4 entries)",
+    "_postman_id": "e1d1b6d1-aaa1-4d7f-abc0-1e1b2d3c4567",
+    "description": "Test collection for creating 4 sleep logs and fetching 30-day averages",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create SleepLog 1",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"sleepDate\": \"2025-05-25T08:33:40.000000\",\n  \"timeInBedInterval\": {\n    \"startTime\": \"2025-05-24T22:30:00\",\n    \"endTime\": \"2025-05-25T06:30:00\"\n  },\n  \"totalTimeInBedSeconds\": 28800,\n  \"morningFeeling\": \"GOOD\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/sleeplog/create",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "sleeplog",
+            "create"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create SleepLog 2",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"sleepDate\": \"2025-05-26T08:33:40.000000\",\n  \"timeInBedInterval\": {\n    \"startTime\": \"2025-05-25T22:30:00\",\n    \"endTime\": \"2025-05-26T06:30:00\"\n  },\n  \"totalTimeInBedSeconds\": 30000,\n  \"morningFeeling\": \"OK\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/sleeplog/create",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "sleeplog",
+            "create"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create SleepLog 3",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"sleepDate\": \"2025-05-27T08:33:40.000000\",\n  \"timeInBedInterval\": {\n    \"startTime\": \"2025-05-26T22:30:00\",\n    \"endTime\": \"2025-05-27T06:30:00\"\n  },\n  \"totalTimeInBedSeconds\": 27000,\n  \"morningFeeling\": \"BAD\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/sleeplog/create",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "sleeplog",
+            "create"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create SleepLog 4",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"sleepDate\": \"2025-05-28T08:33:40.000000\",\n  \"timeInBedInterval\": {\n    \"startTime\": \"2025-05-27T22:30:00\",\n    \"endTime\": \"2025-05-28T06:30:00\"\n  },\n  \"totalTimeInBedSeconds\": 28000,\n  \"morningFeeling\": \"GOOD\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/sleeplog/create",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "sleeplog",
+            "create"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Fetch Last Night Sleep Log",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/sleeplog/fetch_last_night",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "sleeplog",
+            "fetch_last_night"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Averages Last 30 Days",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/sleeplog/averages_last_30_days",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "sleeplog",
+            "averages_last_30_days"
+          ]
+        }
+      }
+    }
+  ]
+}
