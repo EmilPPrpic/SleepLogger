@@ -81,4 +81,13 @@ class SleepLogControllerTest {
         mockMvc.perform(get("/sleeplog/fetch_last_night"))
                 .andExpect(status().isNotFound());
     }
+
+    @Test
+    void shouldReturnNotFoundWhenNoSleepLogsForLast30Days() throws Exception {
+        Mockito.when(sleepLogService.getLast30DayAverages(1L)).thenReturn(null);
+
+        mockMvc.perform(get("/sleeplog/averages_last_30_days"))
+                .andExpect(status().isNotFound());
+    }
+
 }

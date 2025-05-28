@@ -1,6 +1,7 @@
 package com.noom.interview.fullstack.sleep.sleeplog.controller;
 
 import com.noom.interview.fullstack.sleep.sleeplog.SleepLogService;
+import com.noom.interview.fullstack.sleep.sleeplog.dto.SleepLogAveragesDTO;
 import com.noom.interview.fullstack.sleep.sleeplog.dto.SleepLogDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -32,5 +33,15 @@ public class SleepLogController {
             return ResponseEntity.ok(sleepLogDTO);
         }
         return ResponseEntity.notFound().build();
+    }
+
+    @GetMapping("/averages_last_30_days")
+    public ResponseEntity<SleepLogAveragesDTO> getLast30DayAverages() {
+        SleepLogAveragesDTO averagesDTO = sleepLogService.getLast30DayAverages(userId);
+        if (averagesDTO != null) {
+            return ResponseEntity.ok(averagesDTO);
+        }
+        return ResponseEntity.notFound().build();
+
     }
 }
