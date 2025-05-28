@@ -18,7 +18,7 @@ public class SleepLog {
     private Long id;
 
     @Column(nullable = false)
-    private LocalDateTime sleepDate;
+    private LocalDateTime sleepDate = LocalDateTime.now();
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "time_in_bed_id")

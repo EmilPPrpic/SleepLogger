@@ -22,7 +22,6 @@ public class SleepLogController {
 
     @PostMapping("/create")
     public ResponseEntity<SleepLogDTO> createSleepLog(@RequestBody SleepLogDTO sleepLogDTO) {
-
         return ResponseEntity.ok(sleepLogService.createSleepLog(sleepLogDTO, userId));
     }
 

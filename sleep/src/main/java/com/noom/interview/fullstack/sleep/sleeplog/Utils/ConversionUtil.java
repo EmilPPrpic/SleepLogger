@@ -27,7 +27,6 @@ public class ConversionUtil {
         }
         SleepLog sleepLog = new SleepLog();
         sleepLog.setId(sleepLogDTO.getId());
-        sleepLog.setSleepDate(sleepLogDTO.getSleepDate());
         sleepLog.setTimeInBedInterval(convertToTimeInBedInterval(sleepLogDTO.getTimeInBedInterval()));
         sleepLog.setTotalTimeInBedSeconds(sleepLogDTO.getTotalTimeInBedSeconds());
         sleepLog.setMorningFeeling(sleepLogDTO.getMorningFeeling());
